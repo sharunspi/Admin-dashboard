@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function layout({heading}) {
+export default function Header() {
     return (
         <div>
-            <div>{heading}</div>
+            
         </div>
     )
 }
