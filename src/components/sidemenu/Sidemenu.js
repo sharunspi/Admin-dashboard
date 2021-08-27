@@ -9,7 +9,8 @@ import {
   } from "react-pro-sidebar";
   //import sidebar css from react-pro-sidebar module and our custom css 
 import "react-pro-sidebar/dist/css/styles.css";
-export default class Sidemenu extends Component {
+import { connect } from 'react-redux';
+class Sidemenu extends Component {
     constructor(props){
         super(props)
         this.state ={
@@ -27,22 +28,31 @@ export default class Sidemenu extends Component {
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
-              <MenuItem active={true}>
-                Home
-              </MenuItem>
-              <MenuItem >Category</MenuItem>
-              <MenuItem >Favourite</MenuItem>
-              <MenuItem >Author</MenuItem>
-              <MenuItem >Settings</MenuItem>
+                {
+                  this.props.tabs.map(tab =>{
+                    return <MenuItem >
+                    {tab.name}
+                  </MenuItem> 
+                  })
+                }
             </Menu>
           </SidebarContent>
-          <SidebarFooter>
+          {/* <SidebarFooter>
             <Menu iconShape="square">
               <MenuItem >Logout</MenuItem>
             </Menu>
-          </SidebarFooter>
+          </SidebarFooter> */}
         </ProSidebar>
             </div>
         )
     }
 }
+
+const mapStateToProps = state =>{
+  return {
+    tabs:state.tabs
+  }
+}
+
+
+export default connect(mapStateToProps)(Sidemenu)

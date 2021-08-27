@@ -1,19 +1,12 @@
 import { combineReducers } from "redux"
+import {list} from '../config/sideBarList'
 const tabsReducer = () =>{
-    return [
-        {
-            name:'dashboard',
-            route:'dahsboard'
-        },
-        {
-            name:'contact-us',
-            route:'contact-us'
-        }
-    ]
+    console.log(list)
+    return list.filter(item => item.admin)
 }
 
 const selectedTabReducer = (selectedTab=null,action) =>{
-    if(action.type== 'NEW_TAB_SELECT'){
+    if(action.type === 'NEW_TAB_SELECT'){
         return action.payload
     }
     return selectedTab

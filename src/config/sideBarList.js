@@ -1,0 +1,27 @@
+export const list =[
+    {
+        name:'Home',
+        path:'/',
+        admin:true
+    },
+    {
+        name:'Dashboard',
+        path:'/dashboard',
+        admin:true
+    },
+    {
+        name:'Contactus',
+        path:'/contact-us',
+        admin:true
+    },
+    {
+        name:'Login',
+        path:'/login',
+        admin:false
+    },
+    {
+        name:'Signup',
+        path:'/signup',
+        admin:false
+    }
+]
