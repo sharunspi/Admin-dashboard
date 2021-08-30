@@ -4,7 +4,9 @@ export default class Template extends Component {
     render() {
         return (
             <div>
-                Template
+                {
+                    this.props.children
+                }
             </div>
         )
     }
